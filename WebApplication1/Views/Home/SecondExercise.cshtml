@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "SecondExercise";
+}
+
+<h2>Задание 2.</h2>
+<p>Реализовать приложение C#, которое предоставит функционал определения входящий строки на предмет, является ли она палиндромом.</p>
+
+@using (Html.BeginForm())
+{
+    <h3>Введите строку:</h3>
+    @Html.TextBox("requestItems[0]")
+
+    @if (Model != null)
+    {
+        @if (Model.isError)
+        {
+            <h3>Произошла ошибка при решении задачи:</h3>
+            <p>@Model.ErrorString</p>
+        }
+        else
+        {
+            <h3>Ответ на задачу:</h3>
+            <p>@Model.ResponseData</p>
+        }
+    }
+
+    <p><input type="submit" value="Решить задачу" /></p>
+}
